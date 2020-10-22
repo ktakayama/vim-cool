@@ -26,7 +26,7 @@ if exists('##OptionSet')
 endif
 
 function! s:StartHL()
-    if !v:hlsearch || mode() isnot 'n'
+    if !v:hlsearch || mode() isnot 'n' || bufname() == ''
         return
     endif
     let [pos, rpos] = [winsaveview(), getpos('.')]
